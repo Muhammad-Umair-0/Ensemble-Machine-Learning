@@ -28,3 +28,16 @@ ada_clf.fit(X_train, y_train)
 y_pred = ada_clf.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy:.2f}")
+
+
+# GBDT boost
+from sklearn.ensemble import GradientBoostingClassifier
+
+gbdt_clf = GradientBoostingClassifier(n_estimators=50, random_state=42)
+gbdt_clf.fit(X_train, y_train)
+
+#making prediction and evaluating accuracy 
+
+y_pred = gbdt_clf.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
